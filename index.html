@@ -3,38 +3,70 @@
 <meta charset="UTF-8">
 <title>Projects Portfolio</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 <style>
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
 </style>
-<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script src="lib/w3.js"></script>
 <body>
 
+<div class="w3-mobile">
 <div class="w3-top w3-bar w3-black">
     <a href="#home" class="w3-bar-item w3-button">Home</a>
-    <a href="http://portfolio.migcoronel.com" class="w3-bar-item w3-button">Projects Portfolio</a>
-    <a href="https://github.com/migcoronel/FRONT-PAGE/blob/master/Miguel Coronel's Resume.pdf" class="w3-bar-item w3-button">Resume</a>
+    <a href="http://portfolio.migcoronel.com" class="w3-bar-item w3-button" target="_blank">Projects</a>
     <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    <a href="https://github.com/migcoronel/FRONT-PAGE/raw/master/Miguel%20Coronel's%20Resume.pdf" class="w3-bar-item w3-button">Resume</a>
 </div>
 
-<img src="img/img_la.jpg" alt="LA" style="width:100%">
+<img src="img\main_background.jpg" alt="LA" style="width:100%" class="w3-image">
 
+<div class="w3-container w3-black w3-padding-24" id="home">
+    <h2>Miguel Coronel's Portfolio</h2>
+    <h3 class="w3-allerta">Full Stack Developer</h3>
+</div>
 
-<div class="w3-container w3-black">
-    <h1>Miguel Coronel's Projects Portfolio</h1>   
+<div class="w3-display-container w3-padding w3-hover-opacity" style="height:75% ; width:75% ; margin-left:auto; margin-right:auto">
+    <div class="w3-card-4 w3-margin">
+        <img src="img/forum-demo.jpg" alt="Project demo" class="demo" width="100%">
+        <img src="img/db-demo.jpg" alt="Project demo" class="demo" width="100%">
+        <img src="img/rest-demo.jpg" alt="Project demo" class="demo" width="100%">
+        <img src="img/httpclient-demo.jpg" alt="Project demo" class="demo" width="100%">
+        <script>
+            w3.slideshow(".demo",3500);
+        </script>
+
+        <div class="w3-display-middle w3-display-hover">
+            <a href="http://portfolio.migcoronel.com" target="_blank">
+                <button class="w3-button w3-blue w3-round-xlarge w3-padding-16">Go to Projects Portfolio</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="w3-container w3-black w3-padding-24" id="contact">
+    <h2>Contact Information</h2>   
 </div>  
 
-
-<div class="w3-card-4">
-    <img src="img/forum-demo.png" alt="Project demo" class="demo" width="100%">
-    <img src="img/db-demo.png" alt="Project demo" class="demo" width="100%">
-    <img src="img/rest-demo.png" alt="Project demo" class="demo" width="100%">
-    <img src="img/httpclient-demo.png" alt="Project demo" class="demo" width="100%">
+<div id="contact" class="w3-container w3-center w3-padding-32">
+    <h2 class="w3-wide">CONTACT</h2>
+    Buenos Aires, Argentina<br>
+    Email: mcoronel64@gmail.com<br>
+    <p class="w3-opacity w3-center"><i>Do you want to give me your feedback? Send me an email to this address.</i></p>
+    
+    <form class="w3-hide" action="/action_page.php" target="_blank">
+    <input class="w3-input" type="text" placeholder="Name" required name="Name">
+    <input class="w3-input" type="text" placeholder="Email" required name="Email">
+    <input class="w3-input" type="text" placeholder="Message" required name="Message"><br>
+    <button class="w3-button w3-black" type="submit">SEND</button>
+    </form>
+    
+    <br>
+    <img src="img/main_background (2).jpg" alt="LA" style="width:100%" class="w3-image">
+    <p class="w3-center">Made by Miguel Coronel</p>
 </div>
-
-<script>
-    w3.slideshow(".demo",2000);
-</script>
-
 </div>
 
 </body>
