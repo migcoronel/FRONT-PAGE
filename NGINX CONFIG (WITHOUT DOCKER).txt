@@ -1,0 +1,50 @@
+ubuntu
+
+conectar al server
+
+run "apt-get install nginx"
+
+probar ip
+
+run "cd /etc/nginx/sites-available"
+
+run "cp default migcoronel.com" to copy default config
+
+check new file with "ls" or "ll"
+
+run "vim migcoronel.com"
+
+delete "default_server"
+
+change server_name from "_" to "migcoronel.com"
+
+change root from "/var/www/html" to "/var/www/landing"
+
+run cd ..
+
+run cd sites-enabled
+
+run ll
+
+create a simbolic link "ln -s ../sites-available/migcoronel.com ."
+
+run ll to check new simbolic link
+
+run "nginx -s reload"
+
+try server ip 404
+
+run "cd /var/www/"
+
+ls
+
+run "mkdir landing"
+
+run "cd landing"
+
+run "vim index.html" enter "Hola soy miguel" to test
+
+try your server ip to see the previous message
+
+copy your site files here using scp
+

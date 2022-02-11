@@ -3,6 +3,7 @@
 <meta charset="UTF-8">
 <title>Projects Portfolio</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link sizes="32x32" rel="icon" href="img/icon.png" type="image/png">
 <link rel="stylesheet" href="lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 <style>
@@ -11,24 +12,61 @@
 }
 </style>
 <script src="lib/w3.js"></script>
+
 <body>
 
-<div class="w3-mobile">
-<div class="w3-top w3-bar w3-black">
-    <a href="#home" class="w3-bar-item w3-button">Home</a>
-    <a href="http://portfolio.migcoronel.com" class="w3-bar-item w3-button" target="_blank">Projects</a>
-    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    <a href="https://github.com/migcoronel/FRONT-PAGE/raw/master/Miguel%20Coronel's%20Resume.pdf" class="w3-bar-item w3-button">Resume</a>
+<!-- Top Bar Configuration -->
+<div class="w3-top w3-bar w3-small w3-black">
+    <div class="w3-bar-item w3-half w3-mobile">
+        <a class="w3-button w3-left" href="#home">Home</a>
+        <a class="w3-button w3-right w3-hide-large w3-hide-medium" href="javascript:void(0)" onclick="myFunction()">&#9776;</a>
+    </div>
+    <div class="w3-bar-item w3-button w3-hide-small">
+        <a class="w3-button w3-hide-small" href="#preview">Projects Preview</a>
+    </div>
+    <div class="w3-bar-item w3-button w3-hide-small">
+        <a class="w3-button" href="http://portfolio.migcoronel.com" target="_blank">Projects WebApp</a>
+    </div>
+    <div class="w3-bar-item w3-button w3-hide-small">
+        <a class="w3-bar-item w3-button w3-hide-small" href="#contact">Contact</a>
+    </div>
+    <div class="w3-bar-item w3-button w3-hide-small">
+        <a class="w3-bar-item w3-button w3-hide-small" href="https://github.com/migcoronel/FRONT-PAGE/raw/master/Miguel%20Coronel's%20Resume.pdf">Resume</a>
+     </div>
 </div>
 
-<img src="img\main_background.jpg" alt="LA" style="width:100%" class="w3-image">
-
-<div class="w3-container w3-black w3-padding-24" id="home">
-    <h2>Miguel Coronel's Portfolio</h2>
-    <h3 class="w3-allerta">Full Stack Developer</h3>
+<div id="responsive-menu" class="w3-top w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-mobile w3-small">
+    <div class="w3-bar-item w3-half">
+        <a class="w3-button w3-right" href="javascript:void(0)" onclick="myFunction()">&#9776;</a>
+        <a class="w3-button w3-left" href="#home" onclick="myFunction()">Home</a>
+    </div>
+    <div class="w3-bar-item w3-button">
+        <a class="w3-button" href="#preview" onclick="myFunction()">Projects Preview</a>
+    </div>
+    <div class="w3-bar-item w3-button">
+        <a class="w3-button" href="http://portfolio.migcoronel.com" target="_blank" onclick="myFunction()">Projects WebApp</a>
+    </div>
+    <div class="w3-bar-item w3-button">
+        <a class="w3-button" href="#contact" onclick="myFunction()">Contact</a>
+    </div>
+    <div class="w3-bar-item w3-button">
+        <a class="w3-button" href="https://github.com/migcoronel/FRONT-PAGE/raw/master/Miguel%20Coronel's%20Resume.pdf" onclick="myFunction()">Resume</a>    
+    </div>
 </div>
 
-<div class="w3-display-container w3-padding w3-hover-opacity" style="height:75% ; width:75% ; margin-left:auto; margin-right:auto">
+<!-- Main Image Configuration -->
+<div id="home">
+    <img src="img\main_background.jpg" alt="LA" style="width:100%" class="w3-image w3-hide-small">
+    <img src="img/main_background-small.jpg" alt="LA" style="width:100%" class="w3-image w3-hide-large w3-hide-medium" >
+</div>
+
+<!-- Project Preview Configuration -->
+<div class="w3-container w3-black w3-padding-24 w3-padding-top-32" id="preview">
+    <h3>Miguel Coronel's Portfolio</h3>
+    <h4 class="w3-allerta">Full Stack Developer</h4>
+</div>
+
+<div class="w3-display-container w3-padding w3-hover-opacity" style="height:75% ; width:75% ; min-width: 375px ; margin-left:auto; margin-right:auto">
     <div class="w3-card-4 w3-margin">
         <img src="img/forum-demo.jpg" alt="Project demo" class="demo" width="100%">
         <img src="img/db-demo.jpg" alt="Project demo" class="demo" width="100%">
@@ -40,14 +78,15 @@
 
         <div class="w3-display-middle w3-display-hover">
             <a href="http://portfolio.migcoronel.com" target="_blank">
-                <button class="w3-button w3-blue w3-round-xlarge w3-padding-16">Go to Projects Portfolio</button>
+                <button class="w3-button w3-blue w3-round-xlarge w3-padding-16">Go to Projects WebApp</button>
             </a>
         </div>
     </div>
 </div>
 
-<div class="w3-container w3-black w3-padding-24" id="contact">
-    <h2>Contact Information</h2>   
+<!-- Contact Configuration -->
+<div class="w3-container w3-black w3-padding-32" id="contact">
+    <h3>Contact Information</h3>   
 </div>  
 
 <div id="contact" class="w3-container w3-center w3-padding-32">
@@ -62,12 +101,23 @@
     <input class="w3-input" type="text" placeholder="Message" required name="Message"><br>
     <button class="w3-button w3-black" type="submit">SEND</button>
     </form>
-    
+</div>
+<div>
     <br>
-    <img src="img/main_background (2).jpg" alt="LA" style="width:100%" class="w3-image">
+    <img src="img/main_background (2).jpg" alt="LA" style="min-height:285px" class="w3-image w3-mobile">
     <p class="w3-center">Made by Miguel Coronel</p>
 </div>
-</div>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("responsive-menu");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+</script>
 
 </body>
 </html>
