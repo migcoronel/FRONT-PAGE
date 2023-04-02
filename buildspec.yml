@@ -3,42 +3,35 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - npm install @angular/cli@~12.2.12 @angular-devkit/build-angular@~12.2.12 @angular/compiler-cli@~12.2.0
-      - npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-      - npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
-      - npm install
-      # Instala chrome para correr los test
-      - yum update -y
-      - yum install -y fonts-liberation libasound2 libnspr4 libnss3 libx11-xcb1 xdg-utils libxss1 libappindicator1 libindicator7
-      - wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-      - yum install -y ./google-chrome-stable_current_*.rpm
+      - echo Nothing to do in prebuild stage...
+      # - npm install @angular/cli@~12.2.12 @angular-devkit/build-angular@~12.2.12 @angular/compiler-cli@~12.2.0
+      # - npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+      # - npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
+      # - npm install
+      # # Instala chrome para correr los test
+      # - yum update -y
+      # - yum install -y fonts-liberation libasound2 libnspr4 libnss3 libx11-xcb1 xdg-utils libxss1 libappindicator1 libindicator7
+      # - wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+      # - yum install -y ./google-chrome-stable_current_*.rpm
   build:
     commands:
-      - npm run test:coverage -- --no-watch --browsers=ChromeHeadlessNoSandbox
-      - |
-        if [ "$ENVIRONMENT" = "prod" ]; then
-          echo "Runinng production configuration..." && npm run build -- --configuration=production
-        else
-          echo "Runinng development configuration..." && npm run build -- --configuration=development
-        fi
+      - echo Nothing to do in build stage...
+      # - npm run test:coverage -- --no-watch --browsers=ChromeHeadlessNoSandbox
+      # - |
+      #   if [ "$ENVIRONMENT" = "prod" ]; then
+      #     echo "Runinng production configuration..." && npm run build -- --configuration=production
+      #   else
+      #     echo "Runinng development configuration..." && npm run build -- --configuration=development
+      #   fi
   post_build:
     commands:
-      - '[ ${CODEBUILD_BUILD_SUCCEEDING:-0} -eq 1 ] || exit 1'
+      # This line below acts as a circuit breaker if previous steps are not succeeding
+      # - '[ ${CODEBUILD_BUILD_SUCCEEDING:-0} -eq 1 ] || exit 1'
       - aws s3 rm $S3_URI --recursive
-      - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+      # This line below deploys app to cloudfront, but not to be use for now in migcoronel.com
+      # - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
 artifacts:
   files:
     - "**/*"
   discard-paths: no
-  base-directory: dist/nuba-core-frontend
-reports:
-  unit_test_report:
-    files:
-      - "unit-test.xml"
-    base-directory: "test-results"
-    file-format: "JUNITXML"
-  code_coverage_report:
-    files:
-      - "cobertura-coverage.xml"
-    base-directory: "test-results"
-    file-format: "COBERTURAXML"
+  # base-directory: dist/migcoronel-frontpage
