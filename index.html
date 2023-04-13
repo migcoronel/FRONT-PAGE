@@ -25,7 +25,10 @@
         <a class="w3-button w3-hide-small" href="#preview">Projects Preview</a>
     </div>
     <div class="w3-bar-item w3-button w3-hide-small">
-        <a class="w3-button" href="http://portfolio.migcoronel.com" target="_blank">Projects WebApp</a>
+        <a class="w3-button" href="http://api.migcoronel.com/swagger-ui/" target="_blank">API Documentation</a>
+    </div>
+    <div class="w3-bar-item w3-button w3-hide-small">
+        <a class="w3-button" href="http://portfolio.migcoronel.com" target="_blank">Java Server Side UI</a>
     </div>
     <div class="w3-bar-item w3-button w3-hide-small">
         <a class="w3-bar-item w3-button w3-hide-small" href="#contact">Contact</a>
@@ -44,7 +47,10 @@
         <a class="w3-button" href="#preview" onclick="myFunction()">Projects Preview</a>
     </div>
     <div class="w3-bar-item w3-button">
-        <a class="w3-button" href="http://portfolio.migcoronel.com" target="_blank" onclick="myFunction()">Projects WebApp</a>
+        <a class="w3-button" href="http://api.migcoronel.com/swagger-ui/" target="_blank" onclick="myFunction()">API Documentation</a>
+    </div>
+    <div class="w3-bar-item w3-button">
+        <a class="w3-button" href="http://portfolio.migcoronel.com" target="_blank" onclick="myFunction()">Java Server Side UI</a>
     </div>
     <div class="w3-bar-item w3-button">
         <a class="w3-button" href="#contact" onclick="myFunction()">Contact</a>
@@ -62,8 +68,31 @@
 
 <!-- Project Preview Configuration -->
 <div class="w3-container w3-black w3-padding-24 w3-padding-top-32" id="preview">
-    <h3>Miguel Coronel's Portfolio</h3>
-    <h4 class="w3-allerta">Full Stack Developer</h4>
+    <h3>Miguel Coronel's Portfolio > Backend</h3>
+    <h4 class="w3-allerta">Swagger API Documentation</h4>
+</div>
+
+<div class="w3-display-container w3-padding w3-hover-opacity" style="height:75% ; width:75% ; min-width: 375px ; margin-left:auto; margin-right:auto">
+    <div class="w3-card-4 w3-margin">
+        <img src="img/swagger.jpg" alt="Swagger preview" class="api-demo" width="100%">
+        <img src="img/swagger-2.jpg" alt="Swagger preview" class="api-demo" width="100%">
+        <img src="img/swagger-3.jpg" alt="Swagger preview" class="api-demo" width="100%">
+        <img src="img/swagger.jpg" alt="Swagger preview" class="api-demo" width="100%">
+        <script>
+            w3.slideshow(".api-demo",3500);
+        </script>
+
+        <div class="w3-display-middle w3-display-hover">
+            <a href="http://api.migcoronel.com/swagger-ui/" target="_blank">
+                <button class="w3-button w3-blue w3-round-xlarge w3-padding-16">Go to Swagger API Documentation</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="w3-container w3-black w3-padding-24 w3-padding-top-32">
+    <h3>Miguel Coronel's Portfolio > Frontend</h3>
+    <h4 class="w3-allerta">Java Server Side UI</h4>
 </div>
 
 <div class="w3-display-container w3-padding w3-hover-opacity" style="height:75% ; width:75% ; min-width: 375px ; margin-left:auto; margin-right:auto">
@@ -78,7 +107,7 @@
 
         <div class="w3-display-middle w3-display-hover">
             <a href="http://portfolio.migcoronel.com" target="_blank">
-                <button class="w3-button w3-blue w3-round-xlarge w3-padding-16">Go to Projects WebApp</button>
+                <button class="w3-button w3-blue w3-round-xlarge w3-padding-16">Go to Java Server Side UI</button>
             </a>
         </div>
     </div>
